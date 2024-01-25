@@ -1,7 +1,7 @@
-import espress from 'express'
-import morgan from 'morgan'
+const C = console.log.bind(console.log)
+import app from "./app.js";
 
 
-const app=express()
-
-
+app.listen(process.env.SERVER_PORT,()=>{
+    C("Server on port: " + process.env.SERVER_PORT)
+})
