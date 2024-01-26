@@ -1,6 +1,6 @@
-import { Schema } from "mongoose";
+import { Schema,model } from "mongoose";
 
-const productSchema=new Schema({
+const productSchema = new Schema({
     barcode:{
         type:String,
         unique:true,
@@ -13,6 +13,11 @@ const productSchema=new Schema({
     stock:Number,
     expiredDate:String,
     status:Number
-})
+},{
+    timestamps:true,
+    versionKey:false
+}
+
+)
 
 export default model('products', productSchema);
