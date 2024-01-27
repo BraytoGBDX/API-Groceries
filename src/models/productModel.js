@@ -4,7 +4,7 @@ const productSchema = new Schema({
     barcode:{
         type:String,
         unique:true,
-        require:true
+        required:true
     },
     description:String,
     brand:String,
