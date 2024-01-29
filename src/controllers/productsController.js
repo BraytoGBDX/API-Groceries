@@ -58,3 +58,19 @@ export const updateProduct=(req,res)=>{
         })
     })
 }
+
+export const deleteProduct=(req,res)=>{
+    producDAO.deleteProduct(req.params.barcode)
+    .then(result=>{
+        if(result){
+            res.json({
+                status:"Product deleted"
+            })
+        }
+    })
+    .catch(err=>{
+        res.json({
+            status:"Server unavailable"
+        })
+    })
+}

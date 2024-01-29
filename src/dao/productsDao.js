@@ -28,4 +28,13 @@ productDAO.updateProduct=async(barcodeProduct,product)=>{
 
 }
 
+productDAO.deleteProduct=async(barcodeProduct)=>{
+    const productDeleted=await Product.findOneAndDelete({barcode:barcodeProduct})
+    if(productDeleted!=null){
+        return true
+    }else{
+        return false
+    }
+}
+
 export default productDAO;
