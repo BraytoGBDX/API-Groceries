@@ -23,7 +23,22 @@ export const getOneProduct=(req,res)=>{
         }
     })
     .catch(err=>res.json({
-        status:"servidor no disponible"
+        status:"Server not unavailable"
     }))
 }
 
+export const insertProduct=(req,res)=>{
+producDAO.insertProduct(req.body)
+.then(result=>{
+    if(result){
+        res.json({
+            status:"Product saved"
+        })
+    }
+})
+.catch(err=>{
+    res.json({
+        status:"Server not unavailable"
+    })
+})
+}

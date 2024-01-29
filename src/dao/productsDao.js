@@ -12,4 +12,10 @@ productDAO.getOne = async(barcodeProduct)=>{
     return product
 }
 
+productDAO.insertProduct=async(product)=>{
+    const productSaved=new Product(product)
+    await productSaved.save()
+    return true
+}
+
 export default productDAO;
