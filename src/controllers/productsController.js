@@ -23,7 +23,7 @@ export const getOneProduct=(req,res)=>{
         }
     })
     .catch(err=>res.json({
-        status:"Server not unavailable"
+        status:"Server unavailable"
     }))
 }
 
@@ -38,7 +38,23 @@ producDAO.insertProduct(req.body)
 })
 .catch(err=>{
     res.json({
-        status:"Server not unavailable"
+        status:"Server unavailable"
     })
 })
+}
+
+export const updateProduct=(req,res)=>{
+    producDAO.updateProduct(req.params.barcode,req.body)
+    .then(result=>{
+        if(result){
+            res.json({
+                status:"Product updated"
+            })
+        }
+    })
+    .catch(err=>{
+        res.json({
+            status:"Server unavailable"
+        })
+    })
 }
