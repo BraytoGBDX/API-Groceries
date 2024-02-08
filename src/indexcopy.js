@@ -4,18 +4,10 @@ const app = express()
 app.use(express.json())
 
 app.get('/getAll', (req,res) => {
-    //Aquí se procesa la petición y se envía una respuesta
     res.json({
         "status":"Petición por get recibida.."
     })
 })
-
-/*app.get('/getOne/:barcode', (req, res) => {
-    console.log(req.params.barcode)
-    res.json({
-        "status":"Petición por get recibida.."
-    })
-})*/
 
 let arreglo = []
 app.post('/ingresaAlumno', (req, res) =>{
