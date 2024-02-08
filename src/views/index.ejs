@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <title>Abarrotes TIC</title>
+</head>
+
+<body>
+    <div data-role="page">
+        <div data-role="header">
+            <h1>Abarrotes TIC</h1>
+        </div>
+        <div data-role="content">
+            <form action="/api/products" method="post">
+                <input type="text" name="barcode" placeholder="Código de barras">
+                <input type="text" name="description" placeholder="Descripcion">
+                <input type="text" name="brand" placeholder="Marca">
+                <input type="number" name="price" placeholder="Precio de compra">
+                <input type="number" name="cost" placeholder="Precio de venta">
+                <input type="number" name="stock" placeholder="Existencias">
+                <input type="date" name="expiredDate" placeholder="Caducidad">
+                <select name="flip-4" id="flip-4" data-role="slider" data-mini="true">
+                         <option value="0">No</option>
+                         <option value="1">Si</option>
+                </select>
+                <button type="submit" id="submit-8" class="ui-shadow ui-btn ui-corner-all ui-mini">Guardar</button>
+            </form>
+        </div>
+        <div data-role="footer">
+            <h5>Developed by BraytoGBDX</h5>
+        </div>
+    </div>
+</body>
+
+</html>

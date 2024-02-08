@@ -5,8 +5,15 @@ const C = console.log.bind(console.log)
 
 export const getAllProducts=(req,res)=>{
     producDAO.getAll()
-    .then(result=>{
-        res.json(result)
+    .then(products=>{
+        if(products!=null){
+            res.render('../src/views/index')
+
+        }else{
+            res.json({
+                status:"Products not found"
+            })
+        }
     })
     .catch(err=>console.error(err))
 };
@@ -31,9 +38,7 @@ export const insertProduct=(req,res)=>{
 producDAO.insertProduct(req.body)
 .then(result=>{
     if(result){
-        res.json({
-            status:"Product saved"
-        })
+        res.redirect('/api/products')//redirecciona a la raiz
     }
 })
 .catch(err=>{
