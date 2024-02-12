@@ -33,7 +33,7 @@
             </form>
             <form>
                     <input data-type="search" id="searchForCollapsibleSetChildren">
-                </form>
+            </form>
                 <div data-role="collapsibleset" data-filter="true" data-children="> div, > div div ul li" data-inset="true" id="collapsiblesetForFilterChildren" data-input="#searchForCollapsibleSetChildren">
                 <% products.forEach((product)=>{%>
                         <div data-role="collapsible" data-filtertext="<%= product.description %>">
@@ -51,6 +51,9 @@
                                 <% } %></li>
                                 
                             </ul>
+                            <br>
+                            <a href="products/<%= product.barcode %>" class="ui-btn">Actualizar</a>
+
                         </div>
                 
                     

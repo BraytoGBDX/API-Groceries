@@ -20,9 +20,9 @@ export const getAllProducts=(req,res)=>{
 
 export const getOneProduct=(req,res)=>{
     producDAO.getOne(req.params.barcode)
-    .then(result=>{ 
-        if(result!=null){
-        res.json(result)
+    .then(products=>{ 
+        if(products!=null){
+            res.render('../src/views/update',{products})
         }else{
             res.json({
                 status:"Product not found "
@@ -52,9 +52,7 @@ export const updateProduct=(req,res)=>{
     producDAO.updateProduct(req.params.barcode,req.body)
     .then(result=>{
         if(result){
-            res.json({
-                status:"Product updated"
-            })
+            res.redirect('/api/products')
         }
     })
     .catch(err=>{
@@ -78,4 +76,8 @@ export const deleteProduct=(req,res)=>{
             status:"Server unavailable"
         })
     })
+}
+
+export const loadUpdatePage=(req,res)=>{
+    res.render('../src/views/update.ejs',{products})
 }
