@@ -66,9 +66,8 @@ export const deleteProduct=(req,res)=>{
     producDAO.deleteProduct(req.params.barcode)
     .then(result=>{
         if(result){
-            res.json({
-                status:"Product deleted"
-            })
+            res.redirect('/api/products')//redirecciona a la raiz
+
         }
     })
     .catch(err=>{
