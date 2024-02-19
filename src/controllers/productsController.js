@@ -76,6 +76,4 @@ export const deleteProduct=(req,res)=>{
     })
 }
 
-export const loadUpdatePage=(req,res)=>{
-    res.render('../src/views/update.ejs',{products})
-}
+
