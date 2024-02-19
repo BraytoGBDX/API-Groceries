@@ -8,7 +8,7 @@ router.post('/',insertProduct)
 router.post('/:barcode',updateProduct)
 router.get('/delete/:barcode',deleteProduct)
 
-router.get('/update/:barcode')
+router.get('/:barcode')
 
 
 
