@@ -17,7 +17,7 @@
             <h1>Abarrotes TIC</h1>
         </div>
         <div data-role="content">
-            <form action="/api/products" method="post">
+            <form action="/" method="post">
                 <input type="text" name="barcode" placeholder="Código de barras">
                 <input type="text" name="description" placeholder="Descripcion">
                 <input type="text" name="brand" placeholder="Marca">
@@ -54,7 +54,7 @@
                             <br>
                             
                             <a href="<%= product.barcode %>" class="ui-btn">Editar</a>
-                            <form action="/api/products/delete/<%= product.barcode %>" method="get">
+                            <form action="/delete/<%= product.barcode %>" method="get">
                                 <button type="submit" id="submit-8" class="ui-shadow ui-btn ui-corner-all ui-mini">Eliminar</button>
                             </form>
 
