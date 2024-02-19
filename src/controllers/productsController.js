@@ -7,7 +7,7 @@ export const getAllProducts=(req,res)=>{
     producDAO.getAll()
     .then(products=>{
         if(products!=null){
-            res.json({products})
+            res.render('../src/views/index',{products})
         }else{
             res.json({
                 status:"Products not found"
