@@ -38,7 +38,7 @@ export const insertProduct=(req,res)=>{
 producDAO.insertProduct(req.body)
 .then(result=>{
     if(result){
-        res.redirect('/api/products')//redirecciona a la raiz
+        res.redirect('/')//redirecciona a la raiz
     }
 })
 .catch(err=>{
@@ -52,7 +52,7 @@ export const updateProduct=(req,res)=>{
     producDAO.updateProduct(req.params.barcode,req.body)
     .then(result=>{
         if(result){
-            res.redirect('/api/products')
+            res.redirect('/')
         }
     })
     .catch(err=>{
@@ -66,7 +66,7 @@ export const deleteProduct=(req,res)=>{
     producDAO.deleteProduct(req.params.barcode)
     .then(result=>{
         if(result){
-            res.redirect('/api/products')//redirecciona a la raiz
+            res.redirect('/')//redirecciona a la raiz
 
         }
     })
