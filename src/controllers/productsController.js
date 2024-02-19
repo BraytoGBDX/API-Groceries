@@ -7,7 +7,7 @@ export const getAllProducts=(req,res)=>{
     producDAO.getAll()
     .then(products=>{
         if(products!=null){
-            res.json(products)
+            res.json({products})
         }else{
             res.json({
                 status:"Products not found"
@@ -21,7 +21,7 @@ export const getOneProduct=(req,res)=>{
     producDAO.getOne(req.params.barcode)
     .then(products=>{ 
         if(products!=null){
-            res.json(products)
+            res.render('../src/views/update',{products})
         }else{
             res.json({
                 status:"Product not found "
@@ -37,7 +37,7 @@ export const insertProduct=(req,res)=>{
 producDAO.insertProduct(req.body)
 .then(result=>{
     if(result){
-        res.json(result)    
+        res.redirect('/')//redirecciona a la raiz
     }
 })
 .catch(err=>{
@@ -51,7 +51,7 @@ export const updateProduct=(req,res)=>{
     producDAO.updateProduct(req.params.barcode,req.body)
     .then(result=>{
         if(result){
-            res.json(result)    
+            res.redirect('/')
         }
     })
     .catch(err=>{
@@ -65,7 +65,7 @@ export const deleteProduct=(req,res)=>{
     producDAO.deleteProduct(req.params.barcode)
     .then(result=>{
         if(result){
-            res.json(result)    
+            res.redirect('/')//redirecciona a la raiz
 
         }
     })
@@ -76,4 +76,6 @@ export const deleteProduct=(req,res)=>{
     })
 }
 
-
+export const loadUpdatePage=(req,res)=>{
+    res.render('../src/views/update.ejs',{products})
+}
